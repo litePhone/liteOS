@@ -20,15 +20,15 @@ void onMainMenuPressed(lv_event_t * e)
 
   if (index == 0 ) // Phone App
   {
-    lv_scr_load_anim(ui_Phone, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+    lv_scr_load_anim(ui_Phone, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, false);
   }
   if (index == 1)
   {
-    lv_scr_load_anim(ui_Messages, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+    lv_scr_load_anim(ui_Messages, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, false);
   }
-  if (index == 2)
+  if (index == 3)
   {
-    lv_scr_load_anim(ui_Settings, LV_SCR_LOAD_ANIM_FADE_IN, 500, 0, false);
+    lv_scr_load_anim(ui_Settings, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 0, false);
   }
   
 }

@@ -12,6 +12,14 @@ void ui_Messages_screen_init(void)
     lv_obj_set_style_bg_color(ui_Messages, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_Messages, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_Label2 = lv_label_create(ui_Messages);
+    lv_obj_set_width(ui_Label2, LV_SIZE_CONTENT);   /// 93
+    lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 14
+    lv_obj_set_x(ui_Label2, 0);
+    lv_obj_set_y(ui_Label2, -132);
+    lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label2, "Messages");
+
     ui_HomeBtn3 = lv_btn_create(ui_Messages);
     lv_obj_set_width(ui_HomeBtn3, 50);
     lv_obj_set_height(ui_HomeBtn3, 50);
@@ -20,17 +28,15 @@ void ui_Messages_screen_init(void)
     lv_obj_set_align(ui_HomeBtn3, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_HomeBtn3, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
     lv_obj_clear_flag(ui_HomeBtn3, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_obj_set_style_bg_color(ui_HomeBtn3, lv_color_hex(0x404040), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_color(ui_HomeBtn3, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_HomeBtn3, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Image3 = lv_img_create(ui_HomeBtn3);
-    lv_img_set_src(ui_Image3, &ui_img_1883964478);
-    lv_obj_set_width(ui_Image3, LV_SIZE_CONTENT);   /// 50
-    lv_obj_set_height(ui_Image3, LV_SIZE_CONTENT);    /// 50
-    lv_obj_set_align(ui_Image3, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image3, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image3, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
-    lv_img_set_zoom(ui_Image3, 50);
+    ui_Label11 = lv_label_create(ui_HomeBtn3);
+    lv_obj_set_width(ui_Label11, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label11, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_align(ui_Label11, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label11, "<");
+    lv_obj_set_style_text_font(ui_Label11, &lv_font_montserrat_20, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_add_event_cb(ui_HomeBtn3, ui_event_HomeBtn3, LV_EVENT_ALL, NULL);
 

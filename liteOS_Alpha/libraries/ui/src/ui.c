@@ -13,6 +13,8 @@ void ui_Boot_screen_init(void);
 void ui_event_Boot(lv_event_t * e);
 lv_obj_t * ui_Boot;
 lv_obj_t * ui_Label1;
+lv_obj_t * ui_Label9;
+lv_obj_t * ui_Spinner1;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Home
@@ -31,31 +33,46 @@ lv_obj_t * ui_PhoneKeyboard;
 lv_obj_t * ui_PhoneNumInput;
 void ui_event_HomeBtn(lv_event_t * e);
 lv_obj_t * ui_HomeBtn;
-lv_obj_t * ui_Image4;
+lv_obj_t * ui_Label5;
+lv_obj_t * ui_Label3;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Settings
 void ui_Settings_screen_init(void);
 lv_obj_t * ui_Settings;
+lv_obj_t * ui_Label7;
 void ui_event_HomeBtn2(lv_event_t * e);
 lv_obj_t * ui_HomeBtn2;
-lv_obj_t * ui_Image2;
+lv_obj_t * ui_Label10;
+lv_obj_t * ui_TabView2;
+lv_obj_t * ui_About;
+lv_obj_t * ui_Label4;
+lv_obj_t * ui_Label13;
+lv_obj_t * ui_Modem;
+lv_obj_t * ui_Support;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Messages
 void ui_Messages_screen_init(void);
 lv_obj_t * ui_Messages;
+lv_obj_t * ui_Label2;
 void ui_event_HomeBtn3(lv_event_t * e);
 lv_obj_t * ui_HomeBtn3;
-lv_obj_t * ui_Image3;
+lv_obj_t * ui_Label11;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_ActiveCall
 void ui_ActiveCall_screen_init(void);
 lv_obj_t * ui_ActiveCall;
-lv_obj_t * ui_ActivePhoneNumber;
 void ui_event_EndCall(lv_event_t * e);
 lv_obj_t * ui_EndCall;
+lv_obj_t * ui_Label8;
+// CUSTOM VARIABLES
+
+// SCREEN: ui_IncomingCall
+void ui_IncomingCall_screen_init(void);
+lv_obj_t * ui_IncomingCall;
+lv_obj_t * ui_Label6;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -79,7 +96,7 @@ void ui_event_Boot(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_SCREEN_LOADED) {
-        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_FADE_ON, 500, 500, &ui_Home_screen_init);
+        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 2000, &ui_Home_screen_init);
     }
 }
 
@@ -88,7 +105,7 @@ void ui_event_HomeBtn(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Home_screen_init);
+        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Home_screen_init);
     }
 }
 
@@ -97,7 +114,7 @@ void ui_event_HomeBtn2(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Home_screen_init);
+        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Home_screen_init);
     }
 }
 
@@ -106,7 +123,7 @@ void ui_event_HomeBtn3(lv_event_t * e)
     lv_event_code_t event_code = lv_event_get_code(e);
 
     if(event_code == LV_EVENT_CLICKED) {
-        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_Home_screen_init);
+        _ui_screen_change(&ui_Home, LV_SCR_LOAD_ANIM_MOVE_RIGHT, 500, 0, &ui_Home_screen_init);
     }
 }
 
@@ -133,6 +150,7 @@ void ui_init(void)
     ui_Settings_screen_init();
     ui_Messages_screen_init();
     ui_ActiveCall_screen_init();
+    ui_IncomingCall_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_Boot);
 }

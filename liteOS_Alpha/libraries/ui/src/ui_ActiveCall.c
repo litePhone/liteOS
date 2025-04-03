@@ -12,13 +12,6 @@ void ui_ActiveCall_screen_init(void)
     lv_obj_set_style_bg_color(ui_ActiveCall, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_ActiveCall, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_ActivePhoneNumber = lv_label_create(ui_ActiveCall);
-    lv_obj_set_width(ui_ActivePhoneNumber, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_ActivePhoneNumber, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_ActivePhoneNumber, 0);
-    lv_obj_set_y(ui_ActivePhoneNumber, -107);
-    lv_obj_set_align(ui_ActivePhoneNumber, LV_ALIGN_CENTER);
-
     ui_EndCall = lv_btn_create(ui_ActiveCall);
     lv_obj_set_width(ui_EndCall, 230);
     lv_obj_set_height(ui_EndCall, 50);
@@ -29,6 +22,14 @@ void ui_ActiveCall_screen_init(void)
     lv_obj_clear_flag(ui_EndCall, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_obj_set_style_bg_color(ui_EndCall, lv_color_hex(0xB10000), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_EndCall, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label8 = lv_label_create(ui_ActiveCall);
+    lv_obj_set_width(ui_Label8, LV_SIZE_CONTENT);   /// 93
+    lv_obj_set_height(ui_Label8, LV_SIZE_CONTENT);    /// 14
+    lv_obj_set_x(ui_Label8, 0);
+    lv_obj_set_y(ui_Label8, -132);
+    lv_obj_set_align(ui_Label8, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label8, "Active Call");
 
     lv_obj_add_event_cb(ui_EndCall, ui_event_EndCall, LV_EVENT_ALL, NULL);
 

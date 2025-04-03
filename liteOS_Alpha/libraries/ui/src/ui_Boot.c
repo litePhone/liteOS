@@ -19,6 +19,32 @@ void ui_Boot_screen_init(void)
     lv_label_set_text(ui_Label1, "liteOS");
     lv_obj_set_style_text_font(ui_Label1, &lv_font_montserrat_40, LV_PART_MAIN | LV_STATE_DEFAULT);
 
+    ui_Label9 = lv_label_create(ui_Boot);
+    lv_obj_set_width(ui_Label9, LV_SIZE_CONTENT);   /// 93
+    lv_obj_set_height(ui_Label9, LV_SIZE_CONTENT);    /// 14
+    lv_obj_set_x(ui_Label9, 0);
+    lv_obj_set_y(ui_Label9, -132);
+    lv_obj_set_align(ui_Label9, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label9, "v0.0.1");
+
+    ui_Spinner1 = lv_spinner_create(ui_Boot, 1000, 90);
+    lv_obj_set_width(ui_Spinner1, 30);
+    lv_obj_set_height(ui_Spinner1, 30);
+    lv_obj_set_x(ui_Spinner1, 0);
+    lv_obj_set_y(ui_Spinner1, 80);
+    lv_obj_set_align(ui_Spinner1, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_Spinner1, LV_OBJ_FLAG_CLICKABLE);      /// Flags
+    lv_obj_set_style_bg_color(ui_Spinner1, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_bg_opa(ui_Spinner1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_color(ui_Spinner1, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_shadow_opa(ui_Spinner1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_color(ui_Spinner1, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_opa(ui_Spinner1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    lv_obj_set_style_arc_color(ui_Spinner1, lv_color_hex(0xFFFFFF), LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_opa(ui_Spinner1, 255, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+    lv_obj_set_style_arc_width(ui_Spinner1, 5, LV_PART_INDICATOR | LV_STATE_DEFAULT);
+
     lv_obj_add_event_cb(ui_Boot, ui_event_Boot, LV_EVENT_ALL, NULL);
 
 }
